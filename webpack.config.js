@@ -1,5 +1,6 @@
 const HtmlWebpackPlugin = require('html-webpack-plugin');
 const MiniCssExtractPlugin = require('mini-css-extract-plugin');
+const FaviconsWebpackPlugin = require('favicons-webpack-plugin');
 let mode = 'development';
 
 if(process.env.NODE_ENV === 'production') {
@@ -20,7 +21,15 @@ module.exports = {
             filename: '[name].[contenthash].css'
         }),
         new HtmlWebpackPlugin({
-            template: "./src/index.pug"
+            template: "./src/pug/pages/index.pug",
+            filename: "index.html"
+        }),
+        new FaviconsWebpackPlugin({
+            logo: './src/assets/images/logo.ico',
+            cache: true,
+            publicPath: 'static',
+            outputPath: '/public/static',
+            prefix: 'assets/',
         })
     ],
     module: {
