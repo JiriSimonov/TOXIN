@@ -1,13 +1,25 @@
 const HtmlWebpackPlugin = require('html-webpack-plugin');
 const MiniCssExtractPlugin = require('mini-css-extract-plugin');
 const FaviconsWebpackPlugin = require('favicons-webpack-plugin');
+const globule = require("globule");
+const fs = require("fs");
+
 let mode = 'development';
 
 if(process.env.NODE_ENV === 'production') {
     mode = 'production';
 }
 
-console.log(mode + ' mode');
+const mixins = globule
+    .find(["src/blocks/libs/**/_*.pug", "!src/blocks/libs/_libs.pug"])
+    .map((path) => path.split('/').pop())
+    .reduce((acc, currentItem) => acc + `include ${currentItem}\n`, ``);
+
+fs.writeFile("src/blocks/libs/_libs.pug", mixins, (err) => {
+    if (err) throw err;
+});
+
+const paths = globule.find(["src/pug/pages/**/*.pug"]);
 
 module.exports = {
     mode: mode,
@@ -15,23 +27,32 @@ module.exports = {
         assetModuleFilename: "assets/[hash][ext][query]",
         clean: true,
     },
+    devServer: {
+        open: true,
+        static: {
+            directory: './src',
+            watch: true
+        }
+    },
     devtool: 'source-map',
     plugins: [
         new MiniCssExtractPlugin({
             filename: '[name].[contenthash].css'
         }),
-        new HtmlWebpackPlugin({
-            template: "./src/pug/pages/index.pug",
-            filename: "index.html"
-        }),
         new FaviconsWebpackPlugin({
-            logo: './src/assets/images/logo.ico',
+            logo: './src/assets/images/favicon/logo.ico',
             cache: true,
             publicPath: 'static',
             outputPath: '/public/static',
             prefix: 'assets/',
-        })
-    ],
+            inject: true,
+        }),
+        ...paths.map((path) => {
+            return new HtmlWebpackPlugin({
+                template: path,
+                filename: `${path.split(/\/|.pug/).splice(-2, 1)}.html`,
+            });
+        })],
     module: {
         rules: [
             {
