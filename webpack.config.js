@@ -39,14 +39,7 @@ module.exports = {
         new MiniCssExtractPlugin({
             filename: '[name].[contenthash].css'
         }),
-        new FaviconsWebpackPlugin({
-            logo: './src/assets/images/favicon/logo.ico',
-            cache: true,
-            publicPath: 'static',
-            outputPath: '/public/static',
-            prefix: 'assets/',
-            inject: true,
-        }),
+        new FaviconsWebpackPlugin('./src/assets/images/favicon/logo.ico'),
         ...paths.map((path) => {
             return new HtmlWebpackPlugin({
                 template: path,
