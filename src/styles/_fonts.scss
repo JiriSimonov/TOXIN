@@ -1,9 +1,14 @@
 @font-face {
+  font-family: MainFont;
+  src: url("../fonts/Montserrat Regular.ttf");
+}
+
+@font-face {
   font-family: generalFont;
-  src: url("../fonts/Montserrat Black.woff");
+  src: url("../fonts/Montserrat Regular.woff");
 }
 
 @font-face {
   font-family: secondFont;
-  src: url("../fonts/Montserrat Regular.woff");
+  src: url("../fonts/montserrat-bold.woff");
 }
