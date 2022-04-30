@@ -20,6 +20,8 @@
   "homepage": "https://github.com/JiriSimonov/TOXIN#readme",
   "devDependencies": {
     "cross-env": "^7.0.3",
+    "pug": "^3.0.2",
+    "pug-loader": "^2.4.0",
     "sass": "^1.51.0",
     "sass-loader": "^12.6.0",
     "style-loader": "^3.3.1",
