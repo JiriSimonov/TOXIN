@@ -1,0 +1,19 @@
+{
+  "name": "toxin",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/JiriSimonov/TOXIN.git"
+  },
+  "author": "JiriS",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/JiriSimonov/TOXIN/issues"
+  },
+  "homepage": "https://github.com/JiriSimonov/TOXIN#readme"
+}
