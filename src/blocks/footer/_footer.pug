@@ -1,0 +1,14 @@
+mixin footer(page = 'Home')
+    if block
+        block
+    else
+        footer.footer
+            .container
+                .footer__wrapper
+                    .logo__wrapper
+                        +logo
+                        p.footer__descr Бронирование номеров в&nbsp;лучшем отеле 2019 года по&nbsp;версии ассоциации &laquo;Отельные взгляды&raquo;
+                    +footerNav
+            +copyrightBar
+                +copyright
+                +social
