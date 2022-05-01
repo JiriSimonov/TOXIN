@@ -25,7 +25,6 @@ module.exports = {
     mode: mode,
     output: {
         assetModuleFilename: "assets/[hash][ext][query]",
-        clean: true,
     },
     devServer: {
         open: true,
