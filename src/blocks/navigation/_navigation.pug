@@ -1,0 +1,12 @@
+mixin navigation
+    -let navItems = [{'Colors & Type': 'colors&type.html'}, {'Form elements': 'form_elements.html'}, {'Cards': 'cards.html'}, {'Headers&Footers': 'header&footer.html'}]
+    nav.app-nav
+        h1.app-nav__title.title Custom elements
+        ul.app-nav__list
+            each item in navItems
+                li.app-nav__item
+                    each href, value in item
+                        a.app-nav__link.btn(
+                            aria-current='page'
+                            href=href
+                            class=(value === activePage ? "active" : ''))= value
