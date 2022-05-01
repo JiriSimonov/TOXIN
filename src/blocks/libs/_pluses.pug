@@ -1,0 +1,6 @@
+- let plusItems = [{title: 'Комфорт', txt: 'Шумопоглощающие стены', cls: 'plus__item_1'}, {title: 'Удобство', txt: 'Окно в каждой из спален', cls: 'plus__item_2'}]
+
+mixin pluses
+    ul.plus
+       each item in plusItems
+            +plus(item.title, item.txt, item.cls)

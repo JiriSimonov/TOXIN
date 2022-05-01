@@ -1,0 +1,9 @@
+mixin firstAuth(auth = false)
+    if (auth === true)
+        .form__auth
+            p.form__descr Уже есть аккаунт на Toxin
+            +btn('Войти', '/', 'btn btn_empty')
+    else
+        .form__auth
+            p.form__descr Нет аккаунта на Toxin?
+            +btn('Создать', '/', 'btn btn_empty')

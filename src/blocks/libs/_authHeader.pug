@@ -1,0 +1,10 @@
+mixin auth(isAuth)
+    if (isAuth == false)
+        .auth
+            a.auth__login.btn(href='index.html') Войти
+            a.auth__register.btn.btn_filled(href='index.html') Зарегистрироваться
+    else
+        .auth
+            a(href='index.html' aria-label= 'Личный кабинет').auth__user.user
+                span.auth__name Юлий
+                span.auth__surname Цезарь

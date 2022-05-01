@@ -1,0 +1,8 @@
+mixin toggle(txt, tabindex = '0', checked = false)
+    label.label.option
+        if (checked === true)
+            input(type='checkbox' 'checked' tabindex= tabindex).toggle-input
+            span.input-text #{txt}
+        else
+            input(type='checkbox' tabindex= tabindex).toggle-input
+            span.input-text #{txt}

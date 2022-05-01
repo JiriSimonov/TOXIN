@@ -1,0 +1,7 @@
+mixin typography
+    -let typographyItems = [{type: "H1", descr: "This one is the sub-section or widget title", class: 'h1'}, {type: "H2", descr: "Next one is the item title inside widgets", class: 'h2'}, {type: "H3", descr: "This is a label or CTA text", class: 'h3'}, {type: "Body", descr: "This is the body text which is used for most of the design, like paragraphs, lists, etc.", class: 'body-text'}]
+    ul.typo
+        each item in typographyItems
+            li.typo__item
+                h2(class= item.class + ' title_gray').typo__title #{item.type}
+                p(class= item.class) #{item.descr}

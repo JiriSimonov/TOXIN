@@ -1,0 +1,17 @@
+mixin inputForm(type, placeholder, required = false, title = false, txt)
+    if (title == true)
+        if (required == true)
+            h3.h3.form__title #{txt}
+            label.form__label
+                input(type=type placeholder=placeholder value="" required).form__input
+        else
+            h3.h3.form__title #{txt}
+            label.form__label
+                input(type=type placeholder=placeholder value="").form__input
+    else
+        if (required == true)
+            label.form__label
+                input(type=type placeholder=placeholder value="" required).form__input
+        else
+            label.form__label
+                input(type=type placeholder=placeholder value="").form__input

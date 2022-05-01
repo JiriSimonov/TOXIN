@@ -1,0 +1,6 @@
+mixin radio(name, txt, tabindex = '1')
+    label.label.option
+        input(type='radio' name= name class='radio' tabindex=tabindex)
+        span.input-text #{txt}
+        input(type='radio' name= name class='radio' tabindex=tabindex)
+        span.input-text #{txt}

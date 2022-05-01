@@ -1,0 +1,8 @@
+-let toggleItems = [{txt: 'Получать спецпредложения'},{txt: 'Получать спецпредложения'}]
+mixin toggleGroup(name = 'name', tabindex)
+    ul.checkbox-group
+        each item in toggleItems
+            li.checkbox-group__item
+                label.label.option
+                    input(type='radio' name= name class='toggle-input' tabindex= tabindex)
+                    span.input-text #{item.txt}

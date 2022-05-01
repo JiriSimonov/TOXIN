@@ -1,0 +1,8 @@
+mixin checkbox(txt, tabindex = '2', checked = true, cls = 'input')
+    label.label.option
+        if (checked === true)
+            input(type='checkbox' 'checked' tabindex= tabindex class= cls)
+            span.input-text #{txt}
+        else
+            input(type='checkbox' tabindex= tabindex class= cls)
+            span.input-text #{txt}

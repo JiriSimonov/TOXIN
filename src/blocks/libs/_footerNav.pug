@@ -1,0 +1,14 @@
+mixin footerNav
+    - let navLinks = [{txt: 'О нас', href: 'header&footer.html'}, {txt: 'Новости', href: 'news.html'}, {txt: 'Служба поддержки', href: 'services.html'}, {txt: 'Услуги', href: 'services.html'}]
+    - let aboutLinks = [{txt: 'О сервисе', href: 'services.html'}, {txt: 'Наша команда', href: 'services.html'}, {txt: 'Вакансии', href: 'vacancies.html'}, {txt: 'Инвесторы', href: 'vacancies.html'}];
+    - let supLinks = [{txt: 'Соглашения', href: 'agreements.html'}, {txt: 'Сообщества', href: 'services.html'}, {txt: 'Связь с нами', href: 'services.html'}];
+    - let footerNav = [{title: 'Навигация', links: navLinks}, {title: 'О нас', links: aboutLinks}, {title: 'Служба поддержки', links: supLinks}];
+    ul.footer-nav
+        each item in footerNav
+            li.footer-nav__item
+                h3.footer-nav__title.title #{item.title}
+                ul.footer-list
+                    each link in item.links
+                        li.footer-list__item
+                            a(href= link.href class= 'nav__link') #{link.txt}
+        +subsribe

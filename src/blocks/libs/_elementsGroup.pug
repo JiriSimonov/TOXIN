@@ -1,0 +1,24 @@
+- let titleText = 'dasdasdsa';
+
+mixin elementsGroup(title = 'Group', dropdown = false)
+        .elements
+            if (dropdown === true)
+                if (title !== 'Group')
+                    .dropdown
+                        h3.h3.checkbox-title.dropdown-title #{title}
+                        .dropdown__wrapper
+                            if block
+                                block
+                else
+                    .select-box
+                        .option-container
+                            if block
+                                block
+            else
+                if (title !== 'Group')
+                    h3.h3.checkbox-title #{title}
+                    if block
+                        block
+                else
+                    if block
+                        block

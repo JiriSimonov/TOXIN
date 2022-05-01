@@ -1,0 +1,7 @@
+- let bulletItems = [{txt: 'Нельзя с питомцами'}, {txt: 'Без вечеринок и мероприятий'}, {txt: 'Время прибытия — после 13:00, а выезд до 12:00'}]
+
+mixin bulletList
+    ul.bullet
+        each item in bulletItems
+            li.bullet__item
+                p.bullet__descr #{item.txt}

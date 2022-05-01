@@ -1,0 +1,21 @@
+-let services = [{txt: 'услуга-1', href: 'services.html'}, {txt: 'услуга-2', href: 'services.html'}, {txt: 'услуга-3', href: 'services.html'}, {txt: 'услуга-4', href: 'services.html'}];
+-let agreements = [{txt: 'соглашение-1', href: 'agreements.html'}, {txt: 'соглашение-2', href: 'agreements.html'}, {txt: 'соглашение-3', href: 'agreements.html'}, {txt: 'соглашение-4', href: 'agreements.html'}];
+-let navItems = [{txt: 'О нас',  link: 'header&footer.html', drop: false}, {txt: 'Услуги',  link: 'services.html', drop: services, cls: 'submenu_services'},{txt: 'Вакансии', link: 'vacancies.html', drop: false }, {txt: 'Новости', link: 'news.html', drop: false}, {txt: 'Соглашения', link: 'agreements.html', drop: agreements}];
+
+mixin headerNav(activePage='О нас', items= navItems)
+nav(id = 'header-nav').nav
+    ul.nav__list
+        each item in items
+            if (item.drop !== false)
+                li.nav__item.nav__item_dropdown
+                    a.nav__link(aria-current='page' href= item.link class=(item.txt === activePage ? "active" : '')) #{item.txt}
+                    ul(class= item.cls).submenu
+                        each el in item.drop
+                            li.submenu__item
+                                a(href= el.href).submenu__link #{el.txt}
+            else
+                li.nav__item
+                    a.nav__link(
+                        aria-current='page'
+                        href= item.link
+                        class=(item.txt === activePage ? "active" : '')) #{item.txt}

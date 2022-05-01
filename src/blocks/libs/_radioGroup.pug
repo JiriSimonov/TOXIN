@@ -1,0 +1,9 @@
+-let radioItems = [{txt: 'Для мужчин'},{txt: 'Для женщин'}]
+
+mixin radioGroup(items = radioItems, name = 'name', tabindex)
+    ul.checkbox-group.checkbox-group_radio
+        each item in items
+            li.checkbox-group__item.checkbox-group__item_radio
+                label.label.option
+                    input(type='radio' name= name class='radio' tabindex= tabindex)
+                    span.input-text #{item.txt}

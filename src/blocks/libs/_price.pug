@@ -1,0 +1,20 @@
+- let priceElements = [{price: '9 990₽ х 4', text: 'суток', sum: '39 960₽', icon: false}, {price: '2 179₽', text: 'Сбор за услуги: скидка', sum: '0₽', icon: true}, {price: '', text: 'Сбор за дополнительные услуги', sum: '300₽', icon: true}]
+
+mixin price
+    ul.price
+        each item in priceElements
+            li.price__item
+                if (item.icon == true)
+                    .price__wrapper
+                        p.price__descr #{item.text}
+                        if (item.price === '')
+                        else
+                            p.price__count #{item.price}
+                    +tooltip('tooltip.svg', 'tooltip')
+                    p.price__sum #{item.sum}
+                else
+                    .price__wrapper
+                        p.price__count #{item.price}
+                        p.price__descr #{item.text}
+                    p.price__sum #{item.sum}
+

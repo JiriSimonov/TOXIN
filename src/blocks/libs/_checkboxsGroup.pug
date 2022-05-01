@@ -1,0 +1,7 @@
+-let groupItems = [{txt: 'Можно курить', tab: '1', checked: false}, {txt: 'Можно с питомцами', tab: '2', checked: true}, {txt: 'Можно пригласить гостей (до 10 человек)', tab: '3', checked: true}]
+
+mixin checkboxsGroup(items = groupItems)
+    ul.checkbox-group
+        each item in items
+            li.checkbox-group__item
+                +checkbox(item.txt, item.tab, item.checked)

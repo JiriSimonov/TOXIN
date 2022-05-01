@@ -1,0 +1,7 @@
+-let rateItems = [{value: '1', alt: '1'},{value: '2', alt: '2'}, {value: '3', alt: '3'}, {value: '4', alt: '4'}, {value: '5', alt: '5'}]
+mixin rateButton(name = 'name', tabindex)
+    ul.rate
+        each item in rateItems
+            li.rate__item
+                label.label
+                    input(type='radio' name= name class='rate__input' tabindex= tabindex value= item.value)

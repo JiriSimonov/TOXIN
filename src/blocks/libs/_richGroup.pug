@@ -1,0 +1,11 @@
+-let richItems = [{title: 'Широкий коридор', txt: 'Ширина коридоров в номере не менее 91 см.', tab: '6'}, {title: 'Помощник для инвалидов', txt: 'На 1 этаже вас встретит специалист  и проводит до номера.', tab: '7'}]
+
+mixin richGroup(items = richItems)
+    ul.checkbox-group
+        each item in richItems
+            li.checkbox-group__item
+                label.label.option.option_rich
+                    input(type='checkbox' name= name class='input' tabindex= item.tab)
+                    .input-descr
+                        h4.h4.input-title #{item.title}
+                        span.input-text.input-text_rich #{item.txt}

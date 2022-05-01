@@ -1,0 +1,11 @@
+mixin inputSubs(type, placeholder, required)
+    if (required == true)
+        form.subs__form
+            label.subs__label
+                input(type=type placeholder=placeholder value="" required).subs__input
+            button(type="submit" aria-label= 'Отправить').subs__btn
+    else
+        form.subs__form
+            label.subs__label
+                input(type=type placeholder=placeholder value="").subs__input
+            button(type="submit" aria-label= 'Отправить').subs__btn
