@@ -1,0 +1,12 @@
+extends ../layout
+block vars
+    -let lang = 'ru-Ru';
+    -let siteTitle = 'News';
+block content
+    +header
+        +headerNavBar
+            +logo
+            +headerWrapper
+                +headerNav('Новости')
+                +auth(false)
+    +footer

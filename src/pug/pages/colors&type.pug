@@ -1,0 +1,10 @@
+extends ../layout
+block vars
+    -let lang = 'en-ES';
+    -let siteTitle = 'Colors&type';
+block content
+    +main
+        .container.container_colors
+            .colors__wrapper
+                +colors
+                +typography

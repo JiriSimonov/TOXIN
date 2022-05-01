@@ -1,0 +1,13 @@
+extends ../layout
+block vars
+    -let lang = 'ru-Ru';
+    -let siteTitle = 'Agreements';
+block content
+    +header
+        +headerNavBar
+            +logo
+            +headerWrapper
+                +headerNav('Соглашения')
+                +auth(false)
+    +main
+    +footer

@@ -1,0 +1,13 @@
+extends ../layout
+block vars
+    -let lang = 'ru-Ru';
+    -let siteTitle = 'Services';
+block content
+    +header
+        +headerNavBar
+            +logo
+            +headerWrapper
+                +headerNav('Услуги')
+                +auth(false)
+    +main
+    +footer

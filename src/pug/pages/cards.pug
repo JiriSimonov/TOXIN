@@ -1,0 +1,16 @@
+extends ../layout
+block vars
+    -let lang = 'ru-RU';
+    -let siteTitle = 'Cards';
+block content
+    +main
+    .container
+        .cards
+            +card('Найдём номера под ваши пожелания')
+            +card('Регистрация аккаунта')
+                +registration
+            +card
+                +inputForm('email', 'Email', true, true, 'Ваши данные для входа в сервис')
+                +price
+            +card('Войти')
+                +login

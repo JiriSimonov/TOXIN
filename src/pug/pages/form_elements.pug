@@ -1,0 +1,38 @@
+extends ../layout
+block vars
+    -let lang = 'ru-RU';
+    -let siteTitle = 'Form elements';
+block content
+    +main
+        .container
+            +elementsGroup('text field')
+            +elementsGroup('dropdown')
+            +elementsGroup('masked text field')
+            +elementsGroup('date dropdown')
+            +elementsGroup('subscription text filed')
+                +inputSubs('text', 'Email', true)
+            +elementsGroup('dropdown')
+            +elementsGroup('expandable checkbox list', true)
+                +checkboxDropdown
+            +elementsGroup('checkbox buttons')
+            +elementsGroup('radio buttons')
+                +radioGroup(radioItems, 'gender', 4)
+            +elementsGroup('toggle')
+                +toggle('Получать спецпредложения', 5, false)
+            +elementsGroup('like button')
+                +likeBtn
+            +elementsGroup('rate button')
+                +rateButton('rate', 6)
+            +elementsGroup('range slider')
+            +elementsGroup('buttons')
+                +btn('Click me', '/')
+                +btn('Click me', '/', 'btn btn_empty')
+                +btnForm('Перейти к оплате', '/')
+            +elementsGroup('pagination')
+            +elementsGroup('rich checkbox buttons')
+                +richGroup
+            +elementsGroup('bullet list')
+                +bulletList
+            +elementsGroup
+                +pluses
+            +elementsGroup('Dropdown')

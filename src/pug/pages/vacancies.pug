@@ -1,0 +1,13 @@
+extends ../layout
+block vars
+    -let lang = 'ru-Ru';
+    -let siteTitle = 'Vacancies';
+block content
+    +header
+        +headerNavBar
+            +logo
+            +headerWrapper
+                +headerNav('Вакансии')
+                +auth(false)
+    +main v.2.1s11111
+    +footer
