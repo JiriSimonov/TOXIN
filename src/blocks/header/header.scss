@@ -1,0 +1,32 @@
+/* assets */
+
+@use "src/blocks/libs/logo/_logo";
+@use "src/blocks/libs/headerNav/_headerNav";
+@use "src/blocks/libs/authHeader/_authHeader";
+@use "src/blocks/libs/btns/_btns";
+
+/* colors */
+
+/* header */
+
+.header {
+  margin-bottom: 40px;
+  & .container {
+    padding: 0 140px;
+  }
+}
+
+.header__container {
+  display: flex;
+  justify-content: space-between;
+  flex-wrap: wrap;
+  align-items: center;
+  margin: 0 auto;
+  padding: 15px 0;
+}
+
+.header__wrapper {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
