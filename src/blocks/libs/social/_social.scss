@@ -1,0 +1,39 @@
+/* colors */
+
+$purple: #BC9CFF;
+
+/* social */
+
+.social {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 0;
+  max-width: 112px;
+}
+
+.social__item {
+  width: 24px;
+  height: 24px;
+  &:not(:last-child) {
+    margin-right: 20px;
+  }
+}
+
+.social__link {
+  transition: all .3s linear;
+  &:focus {
+    outline: 2px solid $purple;
+    border-radius: 4px;
+  }
+}
+
+.social__img {
+  transition: all .2s linear;
+  width: 100%;
+  height: auto;
+
+  &:hover {
+    opacity: .75;
+  }
+}
