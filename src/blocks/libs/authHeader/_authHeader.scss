@@ -1,0 +1,49 @@
+/* colors */
+$dark-shade-50:rgba(31, 32, 65, 0.5);
+$dark-shade-10:rgba(31, 32, 65, 0.1);
+$purple: #BC9CFF;
+
+/* AUTH */
+
+.auth {
+  display: flex;
+}
+
+.auth__login {
+  margin: 0 20px;
+}
+
+.auth__user {
+  margin-left: 40px;
+  &:focus {
+    outline: 2px solid $purple;
+    border-radius: 4px;
+  }
+}
+
+.auth__name {
+  margin-right: 5px;
+}
+
+.user {
+  position: relative;
+  font-size: 14px;
+  font-weight: 400;
+  line-height: 17.07px;
+  color: $dark-shade-50;
+  transition: all .3s linear;
+
+  &::before {
+    content: '';
+    position: absolute;
+    left: -20px;
+    top: -6px;
+    width: 1px;
+    height: 30px;
+    background-color: $dark-shade-10;
+  }
+
+  &:hover {
+    color: $purple;
+  }
+}
