@@ -1,3 +1,9 @@
 mixin header(page = 'Home')
     if block
         block
+    else
+        +headerNavBar
+            +logo
+            +headerWrapper
+                +headerNav()
+                +auth(false)
