@@ -1,0 +1,43 @@
+/* colors */
+
+@import "src/styles/_global";
+
+/* tooltip */
+
+.tooltip {
+  position: relative;
+  display: inline-block;
+  &:hover .tooltip__text {
+    opacity: 1;
+    visibility: visible;
+  }
+}
+
+.tooltip__text {
+  position: absolute;
+  left: 50%;
+  top: calc(100% + 5px);
+  padding: 5px;
+  border: 1px solid $purple;
+  border-radius: 10px;
+  color: $dark-shade-50;
+  background-color: #FFF;
+  transform: translateX(-50%);
+  opacity: 0;
+  visibility: hidden;
+  z-index: 2;
+}
+
+.tooltip__button {
+  padding: 0;
+  border: none;
+  background-color: transparent;
+  cursor: pointer;
+  &:focus {
+    outline: none;
+  }
+  &:focus + .tooltip__text {
+    opacity: 1;
+    visibility: visible;
+  }
+}
