@@ -1,6 +1,6 @@
 /* colors */
 
-$purple: #BC9CFF;
+@import "src/styles/_global";
 
 /* social */
 
@@ -13,7 +13,8 @@ $purple: #BC9CFF;
 }
 
 .social__item {
-  width: 24px;
+  width: 100%;
+  max-width: 24px;
   height: 24px;
   &:not(:last-child) {
     margin-right: 20px;
@@ -21,19 +22,23 @@ $purple: #BC9CFF;
 }
 
 .social__link {
-  transition: all .3s linear;
-  &:focus {
-    outline: 2px solid $purple;
-    border-radius: 4px;
-  }
-}
-
-.social__img {
-  transition: all .2s linear;
   width: 100%;
-  height: auto;
-
+  max-width: 24px;
+  height: 24px;
+  transition: all .3s linear;
   &:hover {
     opacity: .75;
   }
+  &:focus {
+    outline: none;
+    opacity: .5;
+  }
+}
+
+.social__icon {
+  font-size: 24px;
+  background: -webkit-linear-gradient($purple, $blue);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  transition: all .3s linear;
 }

@@ -1,9 +1,7 @@
-include _socialImg
-
--let socialItems = [{name: 'twitter.svg', href: 'twitter.com', alt: 'twitter'}, {name: 'facebook.svg', href: 'facebook.com', alt: 'facebook'}, {name: 'instagram.svg', href: 'instagram.com', alt: 'instagram'}]
+-let socialItems = [{href: 'twitter.com', aria: 'twitter', cls: 'fa-twitter'}, {href: 'facebook.com', aria: 'facebook', cls: 'fa-facebook-square '}, {href: 'instagram.com', aria: 'instagram', cls: 'fa-instagram'}]
 mixin social
     ul.social
         each item in socialItems
             li.social__item
-                a(href= item.href target='_blank').social__link
-                    +socialImg(item.name, item.alt)
+                a(href= item.href target='_blank' aria-label= item.aria class='social__link')
+                    i(class= `social__icon fa-brands ${item.cls}`)
