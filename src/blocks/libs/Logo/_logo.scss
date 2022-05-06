@@ -11,6 +11,10 @@
   display: flex;
   justify-content: space-between;
   align-items: center;
+  &:focus {
+    outline: none;
+    opacity: .5;
+  }
 }
 
 .logo__svg {
