@@ -1,0 +1,30 @@
+/* assets */
+
+@use "src/blocks/libs/btns/_btns";
+
+/* colors */
+
+@import "src/styles/_global";
+
+/* app-nav */
+
+.title {
+  margin-bottom: 20px;
+}
+
+.app-nav {
+  padding: 50px;
+  margin: 0 auto;
+  text-align: center;
+}
+
+.app-nav__list {
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.app-nav__item:not(:last-child) {
+  margin-bottom: 40px;
+}
